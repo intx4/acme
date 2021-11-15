@@ -1,0 +1,15 @@
+#!/bin/bash
+DIRECTORY=$(dirname "$0")
+echo "Changing to ${DIRECTORY}"
+cd  "$DIRECTORY" || exit 1
+
+echo "Run your project here."
+cd ../cmd
+pwd
+str=""
+for i in $@
+do
+    str="${str} ${i}"
+done
+echo ${str}
+./acme $str
